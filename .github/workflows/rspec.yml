@@ -21,8 +21,6 @@ jobs:
           - gemfiles/rails_7.1.gemfile
           - gemfiles/rails_7.2.gemfile
           - gemfiles/rails_edge.gemfile
-      allow_failures:
-        - gemfile: gemfiles/rails_edge.gemfile
 
     env:
       RAILS_ENV: test
