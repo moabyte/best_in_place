@@ -2,10 +2,6 @@
 [![Build Status](https://secure.travis-ci.org/bernat/best_in_place.png)](http://travis-ci.org/bernat/best_in_place)
 **The Unobtrusive in Place editing solution**
 
-**NB**: For Rails >= 6.1 you can install the gem from this repository with:
-
-    gem "best_in_place", git: "https://github.com/mmotherwell/best_in_place"
-
 ## Description
 
 **Best in Place** is a jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with
@@ -229,7 +225,6 @@ def update
   end
 end
 ```
-
 
 ## Custom display methods
 

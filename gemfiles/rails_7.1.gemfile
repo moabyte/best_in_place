@@ -3,7 +3,6 @@
 source "https://rubygems.org"
 source "https://rails-assets.org"
 
-gem "activerecord"
 gem "rails-assets-jquery", "1.11.1"
 gem "rails-assets-jquery-ui", "1.10.4"
 gem "rdiscount"
@@ -13,11 +12,12 @@ gem "combustion"
 gem "sprockets-rails"
 gem "capybara"
 gem "poltergeist"
-gem "sqlite3"
+gem "sqlite3", "~> 1.4"
 gem "appraisal"
 gem "launchy"
-gem "rails", github: "rails/rails", branch: "4-0-stable"
-gem "test-unit"
+gem "puma"
+gem "phantomjs", require: "phantomjs/poltergeist"
+gem "rails", "7.1.0"
 
 platforms :mri_21 do
   gem "byebug"

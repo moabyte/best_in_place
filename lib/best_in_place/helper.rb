@@ -149,10 +149,11 @@ module BestInPlace
           {from: :sanitize, to: :raw}
       ]
 
+      deprecator = ActiveSupport::Deprecation.new
       deprecations.each do |deprecation|
         if deprecated_option = opts.delete(deprecation[:from])
           opts[deprecation[:from]] = deprecated_option
-          ActiveSupport::Deprecation.warn("[Best_in_place] :#{deprecation[:from]} is deprecated in favor of :#{deprecation[:to]} ")
+          deprecator.warn("[Best_in_place] :#{deprecation[:from]} is deprecated in favor of :#{deprecation[:to]} ")
         end
       end
     end
