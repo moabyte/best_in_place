@@ -3,10 +3,10 @@ name: Ruby CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   test:
@@ -21,8 +21,8 @@ jobs:
           - gemfiles/rails_7.1.gemfile
           - gemfiles/rails_7.2.gemfile
           - gemfiles/rails_edge.gemfile
-        allow_failures:
-          gemfile: gemfiles/rails_edge.gemfile
+      allow_failures:
+        - gemfile: gemfiles/rails_edge.gemfile
 
     env:
       RAILS_ENV: test
@@ -36,15 +36,13 @@ jobs:
         bundler-cache: true
 
     - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --gemfile ${{ matrix.gemfile }}
+      run: bundle install --gemfile ${{ matrix.gemfile }}
 
     - name: Set up PhantomJS
       run: |
-        mkdir travis-phantomjs
-        wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
-        tar -xvf $PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis-phantomjs
+        mkdir -p travis-phantomjs
+        wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
+        tar -xvf travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C travis-phantomjs
         echo "$PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64/bin" >> $GITHUB_PATH
 
     - name: Run tests
