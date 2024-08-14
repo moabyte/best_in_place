@@ -1,35 +1,19 @@
-appraise "rails-3.2" do
-  gem 'rails', github: "rails/rails", branch: '3-2-stable'
-  gem 'strong_parameters'
-  gem 'test-unit'
+appraise "rails-7.0" do
+  gem 'sqlite3', '~> 1.4'
+  gem "rails", github: "rails/rails", branch: '7-0-stable'
 end
 
-appraise "rails-4.0" do
-  gem "rails", github: "rails/rails", branch: '4-0-stable'
-  gem 'test-unit'
+appraise "rails-7.1" do
+  gem 'sqlite3', '~> 1.4'
+  gem "rails", '7.1.0' # issue with 7-1-stable
 end
 
-appraise "rails-4.1" do
-  gem "rails", github: "rails/rails", branch: '4-1-stable'
-end
-
-appraise "rails-4.2" do
-  gem "rails", github: "rails/rails", branch: '4-2-stable'
-end
-
-appraise "rails-5.0" do
-  gem "rails", github: "rails/rails", branch: '5-0-stable'
-end
-
-appraise "rails-5.1" do
-  gem "rails", github: "rails/rails", branch: '5-1-stable'
-end
-
-appraise "rails-6.1" do
-  gem "rails", github: "rails/rails", branch: '6-1-stable'
+appraise "rails-7.2" do
+  gem 'sqlite3', '~> 1.4'
+  gem "rails", github: "rails/rails", branch: '7-2-stable'
 end
 
 appraise "rails-edge" do
-  gem "rails", github: "rails/rails"
-  gem 'arel', github: 'rails/arel'
+  gem 'sqlite3', '~> 1.4'
+  gem "rails", github: "rails/rails", branch: 'main'
 end
