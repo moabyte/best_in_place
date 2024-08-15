@@ -1,6 +1,4 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require 'best_in_place/version'
+require_relative 'lib/best_in_place/version'
 
 Gem::Specification.new do |s|
   s.name        = "best_in_place"
@@ -8,7 +6,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Bernat Farrero"]
   s.email       = ["bernat@itnig.net"]
-  s.homepage    = "http://github.com/bernat/best_in_place"
+  s.homepage    = "https://github.com/bernat/best_in_place"
   s.summary     = <<SUM
   It makes any field in place editable by clicking on it, it works for inputs,
   textareas, select dropdowns and checkboxes

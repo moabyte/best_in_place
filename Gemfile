@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 # Specify your gem's dependencies in best_in_place.gemspec
 gemspec
-
-gem 'rails-assets-jquery', '1.11.1'
-gem 'rails-assets-jquery-ui', '1.10.4'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery', '1.11.1'
+  gem 'rails-assets-jquery-ui', '1.10.4'
+end
 gem 'rdiscount'
 gem 'rspec-rails'
 gem 'nokogiri'
